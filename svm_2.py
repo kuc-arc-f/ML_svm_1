@@ -4,15 +4,12 @@
 from sklearn.svm import LinearSVC
 from sklearn.model_selection import train_test_split
 from sklearn.datasets import load_breast_cancer
-
 import pandas as pd
 
 cancer = load_breast_cancer()
 #print(cancer.data[:10] )
-
-
 #print(cancer.target.shape )
-print( type(cancer.target) )
+#print( type(cancer.target) )
 ds =pd.DataFrame(cancer.data )
 
 #quit()
@@ -27,11 +24,11 @@ model = LinearSVC()
 clf = model.fit(X_train,y_train)
 #pred= model.predict(X_train)
 pred= model.predict(X_test )
-print("pred=", pred.shape )
+#print("pred=", pred.shape )
 
 df= pd.DataFrame(pred)
-print(df.head() )
-quit()
+#print(df.head() )
+#quit()
 print("train:",clf.__class__.__name__ ,clf.score(X_train,y_train))
 print("test:",clf.__class__.__name__ , clf.score(X_test,y_test))
 
